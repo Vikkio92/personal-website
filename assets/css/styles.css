@@ -1,0 +1,212 @@
+/* Variables */
+:root {
+  --font-family: "Roboto", sans-serif;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #fcfcfc;
+  --primary-color: #000;
+  --secondary-color: #54b3d6;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  /*--bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;*/
+}
+  
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1; /*Displayed in front of everything else*/
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*Vertically inside the nav container*/
+  padding-left: 3vh; /*Relative to the font-size of the element (2em means 2 times the size of the current font)*/
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  background-color: var(--bg-color);
+  opacity: 0.8;
+  /* border: 1px solid blue; */
+}
+
+nav img {
+  margin-right: 4vw;
+  width: 5vh;
+  height: 5vh;
+  border-radius:50%;
+  filter: grayscale(100%);
+}
+
+nav img:hover {
+  filter: none;
+}
+
+.nav-link {
+  margin-right: 0.5vh;
+  font-weight: bold;
+  font-size: 1.4vh;
+  background-image: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--secondary-color) 50%, /* this is the color that becomes visible when you hover*/
+    var(--primary-color) 50% /* this is the color that is visible when you do not hover */
+  ); /* give the link a linear background gradient with a hard stop between two colors at the halfway mark */
+  background-size: 200% 100%;
+  background-position: 100%; /* make the background double the link’s width, or 200%, and position it all the way over to the left. That way, it’s like only one of the gradients two colors is showing. */
+  -webkit-background-clip: text;
+  background-clip: text; /* clips the background gradient to the text so it appears the text is actually the color of the background. */
+  -webkit-text-fill-color: transparent; /* strips the color out of the text to make it transparent */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Slide .nav-link::before in from the left */
+.nav-link:hover {
+  background-position: 0;
+ } 
+
+/* Main */
+main {
+  top: 0;
+  width: 84vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 8vw;
+  border: 1px solid red;
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid green;
+}
+
+#about-1 {
+  min-height: 89vh; /* Set minimum height to ensure content is at the bottom */
+  display: flex;
+  flex: 1 1 45vw;
+  padding-bottom: 5vh;
+  border: 1px solid yellow;
+}
+
+.bumper-1 {
+  display: flex;
+  flex: 1 1 30vw;
+  border: 1px solid purple;
+}
+
+#about-2 {
+  display: flex;
+  flex: 1 1 45vw;
+}
+
+#about-pic-container {
+  display: flex;
+  flex: 1 1 30vw;
+  justify-content: center;
+  align-items: flex-end;
+  border: 3px solid blue;
+  filter: grayscale(100%);
+  position: relative; /* Add position relative */
+}
+
+#profile-photo {
+  position: absolute; /* Set position absolute */
+  width: 60%; /* Set the image width to 60% of the container */
+  height: auto; /* Automatically adjust the image height based on the aspect ratio */
+  top: 0%; /* Align to top of container */
+  /* transition: transform 0.3s ease-out; Add a transition for smooth animation */
+}
+
+.about p {
+    margin-top: auto;
+    font-size: 10vh;
+}
+
+.shake {
+  text-decoration: none;
+  position: relative;
+}
+
+/*Underlined effect*/
+.shake::before {
+  content: '';
+  background-color: var(--secondary-color);
+  position: absolute;
+  left: 0;
+  bottom: 1vh;
+  width: 100%;
+  height: 1vh;
+  z-index: -1;
+  transition: all 0.5s ease-in-out; /*Makes smooth transition between before (the line) and hover::before (the expanded line)*/
+  display: inline-block;
+  /*transform: rotate(3deg);*/
+}
+
+.shake:hover {
+  color: white;
+}
+
+.shake:hover::before { /*This is the "highlighter colour" when you hover over the element*/
+  bottom: 0vh;
+  height: 90%;
+}
+
+/*Shake animation*/
+@keyframes shake {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); } 
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake:hover {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  transform-origin:50% 50%;
+  /*-webkit-animation-iteration-count: infinite;*/
+}
+
+.shake {
+  display:inline-block
+}
+
+/*Statement section*/
+
+
+.big-bumper {
+  height: 3000px;
+}
