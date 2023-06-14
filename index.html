@@ -24,26 +24,29 @@
       </div>
       <div class="navigation">
         <a href="#top" class="nav-link">About</a>
-        <a href=".statement" class="nav-link">Statement</a>
-        <a href=".skills" class="nav-link">Skills</a>
-        <a href=".contact" class="nav-link">Contact</a>
+        <a href="#statement" class="nav-link">Statement</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
     </nav>
 
     <main>
         <!-- About Section -->
-        <div class="scroll-text">
-          <span>こんにちは</span>
-          <span>Hello</span>
-          <span>Ciao</span>
-          <span>Bonjour</span>
-          <span>Hola</span>
+        <div class="scroll-container">
+          <div class="scroll-text">
+            <marquee class="scroll-inner-text">
+              <span>こんにちは hello ciao नमस्ते bonjour hola 您好 안녕하세요 merhaba</span>
+              <span>こんにちは hello ciao नमस्ते bonjour hola 您好 안녕하세요 merhaba</span>
+            </marquee>
+          </div>
         </div>
+      
       <div class="about">
+      
         <div id="about-1">
           <div>
-              <p><span class="japanese-text">ようこそ<span class="japanese-translation">Welcome</span></span>👋
-              <br>I'm Victor and I'm<br> not a web designer<br>
+              <p><span class="japanese-text">ようこそ<span class="japanese-translation">Welcome</span></span><span class="emoji">👋</span>
+              <br>I'm Victor and I'm<br> not a web developer<br>
               <span class="shake">(yet)</span>.</p>
           </div>
         </div>
@@ -61,13 +64,15 @@
         </div>
 
         <div id="about-2">
-          <p>I'm currently a finance 💰 person in London, UK.</p>
+          <p>I'm currently a finance <span class="emoji">💰</span> person in London, UK.</p>
         </div>
 
       </div>
 
         <!-- Statement section -->
-        <div class="statement">
+        <div class="statement" id="statement">
+          <h2>Statement</h2>
+          <br>This website is meant to fulfill one of the requirements for admission to the Founders & Coders foundation course.
           <br>I love eating and discovering new restaurants.  
           I always wanted to become a software engineer, but I let social pressures influence me and made a different choice.
           <br>I learned a bunch of Python on my own and I am now learning web development using HTML, CSS, and JavaScript.
@@ -77,11 +82,32 @@
             <span class="japanese-text">趣味は日本語を勉強することです～
               <span class="japanese-translation">My hobby is studying Japanese</span>
             </span>
+          <br>I would like to become a web developer because of the 
+          
         </div>
 
-        <!-- Skills section -->
-        <div class="skills">
-          Some more test text.
+        <!-- Portfolio section -->
+        <div class="portfolio" id="portfolio">
+          Believe it or not, the idea for this game came to me in a dream. I'd just started learning HTML/CSS/JS and I noticed how most of the work is done using squares or rectangles, so I thought I would leverage that and create a game based on squares.
+          <br>I did not follow any tutorials or walkthroughs to build this game.
+          <br>Key features:
+          <ul>
+            <li>Targets are randomly generated from the edges of the screen</li>
+            <li>Targets are fired towards the target grid, with the angle of the possible trajectories decreasing as the grid decreases in size</li>
+            <li>See-through target grid provides an additional visual complication</li>
+            <li>Only score a point when the target is within the grid</li>
+            <li>Scoring system</li>
+            <li>Top score retained in local memory</li>
+            <li>Levelling up system. Levelling up results in:</li>
+              <ul>
+                <li>Change in color palette</li>
+                <li>Increased target movement speed</li>
+                <li>Reduced target grid size</li>
+                <li>User recovers a life if at less than max health</li>
+                <li>1UP animation in case the user has recovered a life</li>
+              </ul>
+            <li>Fully responsive design covering virtually any device / screen size</li>
+          </ul>
         </div>
 
         <!-- Contact section -->
@@ -89,7 +115,7 @@
         <!-- Social accounts - Fixed to the right -->
 
         <!-- Scroll to top -->
-
+        <div><a href="#top">Back to top.</a></div>
     </main>
 
     <!-- Footer section -->

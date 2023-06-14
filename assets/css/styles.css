@@ -40,7 +40,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 2; /*Displayed in front of everything else*/
+  z-index: 10; /*Displayed in front of everything else*/
   display: flex;
   flex-direction: row;
   align-items: center; /*Vertically inside the nav container*/
@@ -94,14 +94,14 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin: 0 8vw;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .about {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 /* Elements on the left of the page */
@@ -114,38 +114,40 @@ main {
   min-height: 89vh; /* Set minimum height to ensure content is at the bottom */
   align-items: flex-end;
   padding-bottom: 5vh;
-  border: 5px solid yellow;
+  /* border: 5px solid yellow; */
 }
 
 /* Elements on the right of the page */
 .bumper-1-right, #about-pic-container, #about-2 {
   display: flex;
   flex: 1 1 30vw;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 }
 
-/* Add background color and make container come to the front so it covers the pictures as they scroll up */
 #about-1, #about-2 {
-  background-color: var(--bg-color);
   z-index: 1;
 }
 
 #about-pic-container, #london-pic-container {
   justify-content: center;
   align-items: flex-end;
-  border: 3px solid blue;
-  filter: grayscale(100%);
-  position: relative; /* Add position relative */
+  /* border: 3px solid blue; */
+  /* filter: grayscale(100%); */
+  position: relative;
+}
+
+#about-2 {
+  background-color: var(--bg-color);
 }
 
 #profile-pic {
   top: 0%; /* Align to top of container */
-  width: 60%; /* Set the image width to 60% of the container */
+  width: 80%; /* Set the image width to 60% of the container */
 }
 
 #london-pic {
   top: 100%; /* Align to bottom of container */
-  width: 45%; /* Set the image width to 45% of the container so it's the same absolute size as profile-pic*/
+  width: 80%; /* Set the image width to 45% of the container so it's the same absolute size as profile-pic*/
 }
 
 #profile-pic, #london-pic {
@@ -161,12 +163,10 @@ main {
 }
 
 .japanese-translation {
-  display: none;
   top: -100%;
   left: 5%;
-  z-index: 1;
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--bg-color);
   opacity: 0;
   height: 0;
   display: block;
@@ -177,12 +177,44 @@ main {
 .japanese-translation.show {
   opacity: 1;
   height: auto;
+  z-index: 9;
 }
 
 .about p {
-    margin-top: auto;
-    font-size: 10vh;
+  margin-top: auto;
 }
+
+ul {
+  padding-left: 0;
+}
+
+ul > ul {
+  padding-left: 2%;
+}
+
+
+/* Phone and tablet */
+@media (max-width: 768px) {
+  .about p {
+    font-size: 5vh;
+  }
+}
+
+/* Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about p {
+    font-size: 6vh;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .about p {
+    font-size: 10vh;
+  }
+}
+
+
 
 .shake {
   text-decoration: none;
@@ -233,31 +265,51 @@ main {
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
-/* Scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.scroll-container {
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  left: -3vw;
+  top: 15vh;
+  rotate: -15deg;
+  z-index: 2;
 }
 
 .scroll-text {
   white-space: nowrap;
   overflow: hidden;
-  animation: scroll 10s linear infinite;
+  font-size: 8vh;
+  color: black;
+  animation: marquee linear infinite;
 }
 
-.scroll-text span {
-  display: inline-block;
-  padding-right: 1em;
+/* Scroll animation */
+@keyframes scroll-text {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
+/* Rotate emojis */
+.emoji {
+  transition: transform 0.3s ease-in-out; /* Add transition property for smooth animation */
+}
+
+.emoji:hover {
+  transform: rotate(360deg); /* Rotate the element by 360 degrees on hover */
+}
 
 /*Statement section*/
-
+.statement {
+  width: 100%;
+  background-color: var(--bg-color);
+}
 
 
 
