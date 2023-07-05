@@ -4,19 +4,14 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #fcfcfc;
+  --bg-color: #ffffff;
   --primary-color: #000;
   --secondary-color: #54b3d6;
-  --primary-shadow: #8b8eaf;
-  --secondary-shadow: #a17a69;
-  /*--bottom-margin: 0.5rem;
-  --bottom-margin-2: 1rem;
-  --line-height: 1.7rem;
-  --transition: 0.3s;*/
 }
   
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -26,16 +21,16 @@ html {
   font-family: var(--font-family);
 }
 
-a {
+/* Navbar */
+nav > a {
   text-decoration: none;
   color: var(--primary-color);
 }
 
-a:hover {
+nav > a:hover {
   color: var(--secondary-color);
 }
 
-/* Navbar */
 nav {
   position: sticky;
   top: 0;
@@ -49,7 +44,7 @@ nav {
   padding-bottom: 3vh;
   background-color: var(--bg-color);
   opacity: 0.8;
-  /* border: 1px solid blue; */
+  transition: opacity 0.3s ease-in-out;
 }
 
 nav img {
@@ -94,14 +89,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin: 0 8vw;
-  /* border: 1px solid red; */
 }
 
 .about {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  /* border: 1px solid green; */
 }
 
 /* Elements on the left of the page */
@@ -114,14 +107,12 @@ main {
   min-height: 89vh; /* Set minimum height to ensure content is at the bottom */
   align-items: flex-end;
   padding-bottom: 5vh;
-  /* border: 5px solid yellow; */
 }
 
 /* Elements on the right of the page */
 .bumper-1-right, #about-pic-container, #about-2 {
   display: flex;
   flex: 1 1 30vw;
-  /* border: 1px solid purple; */
 }
 
 #about-1, #about-2 {
@@ -131,7 +122,6 @@ main {
 #about-pic-container, #london-pic-container {
   justify-content: center;
   align-items: flex-end;
-  /* border: 3px solid blue; */
   /* filter: grayscale(100%); */
   position: relative;
 }
@@ -142,12 +132,12 @@ main {
 
 #profile-pic {
   top: 0%; /* Align to top of container */
-  width: 80%; /* Set the image width to 60% of the container */
+  width: 60%; /* Set the image width to 60% of the container */
 }
 
 #london-pic {
   top: 100%; /* Align to bottom of container */
-  width: 80%; /* Set the image width to 45% of the container so it's the same absolute size as profile-pic*/
+  width: 60%; /* Set the image width to 45% of the container so it's the same absolute size as profile-pic*/
 }
 
 #profile-pic, #london-pic {
@@ -198,12 +188,36 @@ ul > ul {
   .about p {
     font-size: 5vh;
   }
+
+  h2 {
+    font-size: 3vh;
+  }
+
+  .cards-section {
+    grid-template-rows: 30% 30% auto;
+  }
+
+  .card-container {
+    width: 75px;
+    height: 75px;
+  }
 }
+
+
 
 /* Laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
   .about p {
     font-size: 6vh;
+  }
+
+  h2 {
+    font-size: 4vh;
+  }
+
+  .card-container {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -212,9 +226,21 @@ ul > ul {
   .about p {
     font-size: 10vh;
   }
+
+  h2 {
+    font-size: 5vh;
+  }
+
+  .cards-section {
+    height: 100vh;
+    grid-template-rows: 33% 33% auto;
+  }
+
+  .card-container {
+    width: 370px;
+    height: 370px;
+  }
 }
-
-
 
 .shake {
   text-decoration: none;
@@ -265,17 +291,22 @@ ul > ul {
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.scroll-container {
-  overflow: hidden;
-  position: absolute;
-  display: flex;
-  align-items: center;
+#scroll-1 {
   height: 10vh;
-  width: 100%;
+  position: absolute;
   left: -3vw;
   top: 15vh;
   rotate: -15deg;
   z-index: 2;
+}
+
+#scroll-2 {
+  width: 110vw;
+  align-items: center;
+  position: absolute;
+  left: -3vw;
+  border: 1px solid red;
+  rotate: 15deg;
 }
 
 .scroll-text {
@@ -305,12 +336,125 @@ ul > ul {
   transform: rotate(360deg); /* Rotate the element by 360 degrees on hover */
 }
 
+h2 {
+  padding-top: 2%;
+  padding-bottom: 1%
+}
+
 /*Statement section*/
 .statement {
   width: 100%;
   background-color: var(--bg-color);
 }
 
+.cards-section {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: repeat(3, minmax(10px, 1fr));
+  justify-items: center;
+  word-wrap: break-word;
+  overflow:hidden;
+  border-radius: .5rem;
+}
+
+.card-container {
+  perspective: 1000px; /* sets the distance from the user */
+  border-radius: .5rem;
+}
+
+.card {
+  width: 95%;
+  height: 95%;
+  border-radius: .5rem;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-front > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+.card:hover, .card:focus {
+  transform: rotateY(180deg);
+}
+
+.card.card-shadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: .5em;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 2em;
+  border: 1px solid var(--secondary-color);
+  font-size: 1vw;
+}
+
+.btn-top {
+  background: none;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 1rem;
+  padding: .5em .75em;
+  border-radius: .25em;
+}
+
+.btn-top:hover {
+  background: var(--secondary-color);
+  opacity: 0.5;
+  color: white;
+}
+
+/*Game section*/
+.game {
+  width: 100%;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: .5rem;
+  background: #ccc;
+}
+
+#website-container {
+  position: relative;
+  width: 40%;
+}
+
+#embedded-website, #screenshot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+  border: none;
+  border-radius: .5rem;
+}
+
+#screenshot {
+  object-fit: cover;
+  opacity: 0;
+}
+
+.game-description {
+  width: 55%;
+  padding: 2%;
+}
 
 
 .big-bumper {

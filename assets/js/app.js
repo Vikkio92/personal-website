@@ -18,6 +18,35 @@
 //   });
 
 
+
+// Remove navbar if user scrolls down more than 50% of the height of the screen
+window.addEventListener('scroll', function() {
+  var navbar = document.querySelector('nav');
+  var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  var windowHeight = window.innerHeight;
+  var scrollThreshold = windowHeight * 0.5;
+
+  if (scrollPosition >= scrollThreshold) {
+    navbar.style.opacity = '0';
+    navbar.style.pointerEvents = 'none';
+  } else {
+    navbar.style.opacity = '0.8';
+    navbar.style.pointerEvents = 'auto';
+  }
+});
+
+
+// Ensure that the navbar retains its smooth animation behavior after a resize event by temporarily disabling and re-enabling the transition. The requestAnimationFrame method is used to trigger the re-enabling of the transition on the next frame, allowing the browser to reset the transition state.
+window.addEventListener('resize', function() {
+  var navbar = document.querySelector('nav');
+  navbar.style.transition = 'none';
+  window.requestAnimationFrame(function() {
+    navbar.style.transition = '';
+  });
+});
+
+
+
 // Make profile-pic scroll up faster than the other content
 window.addEventListener('scroll', function() {
     var scrollPosition = window.pageYOffset;

@@ -18,21 +18,21 @@
     <!-- Navbar -->
     <nav>
       <div class="avatar-link">
-        <a href="C:/Users/Vittorio/OneDrive/personal-website/index.html">
+        <a href="index.html">
             <img src="assets/icons/avatar.png" alt="vsb" loading="lazy" />
         </a>
       </div>
       <div class="navigation">
         <a href="#top" class="nav-link">About</a>
         <a href="#statement" class="nav-link">Statement</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#game" class="nav-link">Game</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
     </nav>
 
     <main>
         <!-- About Section -->
-        <div class="scroll-container">
+        <div class="scroll-container" id="scroll-1">
           <div class="scroll-text">
             <marquee class="scroll-inner-text">
               <span>こんにちは hello ciao नमस्ते bonjour hola 您好 안녕하세요 merhaba</span>
@@ -69,56 +69,184 @@
 
       </div>
 
-        <!-- Statement section -->
-        <div class="statement" id="statement">
+      <!-- Statement section -->
+      <div class="statement" id="statement">
+        <div class="statement-title">
           <h2>Statement</h2>
-          <br>This website is meant to fulfill one of the requirements for admission to the Founders & Coders foundation course.
-          <br>I love eating and discovering new restaurants.  
-          I always wanted to become a software engineer, but I let social pressures influence me and made a different choice.
-          <br>I learned a bunch of Python on my own and I am now learning web development using HTML, CSS, and JavaScript.
-          <br>I love building things!
-          <br>I have never considered myself a creative person, but I am a hugely creative problem solver.
-          <br>
-            <span class="japanese-text">趣味は日本語を勉強することです～
-              <span class="japanese-translation">My hobby is studying Japanese</span>
-            </span>
-          <br>I would like to become a web developer because of the 
-          
         </div>
+        <p>This website is meant to fulfill one of the requirements for admission to the Founders & Coders foundation course.</p>
 
-        <!-- Portfolio section -->
-        <div class="portfolio" id="portfolio">
-          Believe it or not, the idea for this game came to me in a dream. I'd just started learning HTML/CSS/JS and I noticed how most of the work is done using squares or rectangles, so I thought I would leverage that and create a game based on squares.
-          <br>I did not follow any tutorials or walkthroughs to build this game.
-          <br>Key features:
-          <ul>
-            <li>Targets are randomly generated from the edges of the screen</li>
-            <li>Targets are fired towards the target grid, with the angle of the possible trajectories decreasing as the grid decreases in size</li>
-            <li>See-through target grid provides an additional visual complication</li>
-            <li>Only score a point when the target is within the grid</li>
-            <li>Scoring system</li>
-            <li>Top score retained in local memory</li>
-            <li>Levelling up system. Levelling up results in:</li>
-              <ul>
-                <li>Change in color palette</li>
-                <li>Increased target movement speed</li>
-                <li>Reduced target grid size</li>
-                <li>User recovers a life if at less than max health</li>
-                <li>1UP animation in case the user has recovered a life</li>
-              </ul>
-            <li>Fully responsive design covering virtually any device / screen size</li>
-          </ul>
+        <div class="cards-section">
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/schio.jpg">
+              </div>
+              <div class="card-back">
+                ITALIAN
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/city-of-london.webp">
+              </div>
+              <div class="card-back">
+                FINANCE STUFF
+                So, let me give you a glimpse into my world: I'm Victor, a finance enthusiast by day and an insatiably curious coding explorer by night. Surprisingly, I'm not a web developer...yet. But hey, we all start somewhere, right? Rest assured, I won't subject you to crashing websites or an overload of glittery unicorns (unless you specifically request it, but I won't judge).
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                FOODIE STUFF
+                When I'm not crunching numbers in the vibrant city of London, I embark on a delectable quest to unearth hidden culinary gems. Consider me your friendly neighborhood foodie! If you need restaurant recommendations, I'm your go-to guide for gastronomic delights.
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                PYTHON DATA SCIENCE / FINANCIAL MODELLING
+                While I initially veered away from software engineering due to societal pressures, my passion for coding remained unwavering. I'm a self-taught Python enthusiast, continuously honing my skills by crafting nifty scripts and tackling intriguing algorithms. And now, I'm eagerly delving into the captivating realm of web development, immersing myself in the wonders of HTML, CSS, and JavaScript. Building things fills me with immense joy and a profound sense of achievement—it's like playing with digital Legos without the excruciating foot pain.
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                I have zero experience in web development or programming in general, apart from some self-taught VBA and Python for financial modelling and data science that helped me speed up work for my job.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                Here's the honest truth: I've never considered myself a profoundly creative person. My drawing skills could use some improvement, to say the least. However, I possess a keen knack for problem-solving and an imaginative approach that knows no bounds. I'll bend over backward, twist sideways, and perhaps even throw in a subtle dance move to unravel coding conundrums and fashion elegant solutions.
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                JAPANESE STUFF
+                Now, here's a little secret about me - I have a hidden passion:
+                <span class="japanese-text">趣味は日本語を勉強することです～
+                  <span class="japanese-translation">My hobby is studying Japanese</span>
+                </span>
+                What can I say, I'm a sucker for both programming and natural languages!
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                I have zero experience in web development or programming in general, apart from some self-taught VBA and Python for financial modelling and data science that helped me speed up work for my job.
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card card-shadow">
+              <div class="card-front">
+                <img src="assets/icons/dalloway-terrace.jpg">
+              </div>
+              <div class="card-back">
+                So, why am I so eager to join the Founders and Coders foundations programme? It's simple: I yearn to unleash my creativity, explore limitless possibilities, and craft websites and applications that captivate and delight people. The programme offers a remarkable opportunity to refine my skills and collaborate with a diverse community of like-minded individuals. I aim to create unforgettable online experiences that leave a lasting impression, empowering and connecting people through technology.
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- Scroll to top -->
+      <!-- <button class="btn-top">Back to top</button> -->
+
+      <!-- Game section -->
+      <div class="game" id="game">
+        <h2>Game</h2>
+        
+        <div class="game-container">
+          <div id="website-container">
+            <iframe id="embedded-website" src="https://vikkio92.github.io/squares-game"></iframe>
+            <a href="https://vikkio92.github.io/squares-game"><img id="screenshot" alt="Website Screenshot" /></a>
+          </div>
+
+          <div class="game-description">
+            <p>Believe it or not, the idea for this game came to me in a dream. I'd just started learning HTML/CSS/JS and I noticed how most of the work is done using squares or rectangles, so I thought I would leverage that and create a game based on squares.
+            <br>I did not follow any tutorials or walkthroughs to build this game.</p>
+            <br>Key features:
+            <ul>
+              <li>Targets are randomly generated from the edges of the screen</li>
+              <li>Targets are fired towards the target grid, with the angle of the possible trajectories decreasing as the grid decreases in size</li>
+              <li>See-through target grid provides an additional visual complication</li>
+              <li>Only score a point when the target is within the grid</li>
+              <li>Scoring system</li>
+              <li>Top score retained in local memory</li>
+              <li>Levelling up system. Levelling up results in:</li>
+                <ul>
+                  <li>Change in color palette</li>
+                  <li>Increased target movement speed</li>
+                  <li>Reduced target grid size</li>
+                  <li>User recovers a life if at less than max health</li>
+                  <li>1UP animation in case the user has recovered a life</li>
+                </ul>
+              <li>Fully responsive design covering virtually any device / screen size</li>
+            </ul>
+            <p>It is still not optimised for touch screens, which is something I would like to learn at Founders & Coders!</p>
+          </div>
         </div>
+      
+        <!-- Scroll to top -->
+        <!-- <button class="btn-top">Back to top</button> -->
+
+      </div>
+
+        
 
         <!-- Contact section -->
         <div class="big-bumper"></div>
         <!-- Social accounts - Fixed to the right -->
 
-        <!-- Scroll to top -->
-        <div><a href="#top">Back to top.</a></div>
     </main>
 
     <!-- Footer section -->
+    <!-- <div class="scroll-container" id="scroll-2">
+      <div class="scroll-text">
+        <marquee class="scroll-inner-text">
+          <span>This website was made exclusively with HTML, CSS, and vanilla JavaScript</span>
+          <span>This website was made exclusively with HTML, CSS, and vanilla JavaScript</span>
+        </marquee>
+      </div>
+    </div> -->
 
     <!-- Website scripts -->
     <script src="assets/js/app.js"></script>
